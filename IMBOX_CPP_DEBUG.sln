@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IMBOX_CPP_DEBUG", "IMBOX_CPP_DEBUG\IMBOX_CPP_DEBUG.vcxproj", "{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}.Debug|x64.ActiveCfg = Debug|x64
+		{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}.Debug|x64.Build.0 = Debug|x64
+		{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}.Debug|x86.ActiveCfg = Debug|Win32
+		{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}.Debug|x86.Build.0 = Debug|Win32
+		{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}.Release|x64.ActiveCfg = Release|x64
+		{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}.Release|x64.Build.0 = Release|x64
+		{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}.Release|x86.ActiveCfg = Release|Win32
+		{81333C2D-2D4D-4F70-9E79-249CF4DCE28E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2F69E0B-0058-427A-BB2E-BB31AF15A71D}
+	EndGlobalSection
+EndGlobal
