@@ -1,7 +1,7 @@
 #pragma once
-#include "windows.h"
+#include<windows.h>
 
-class imwindows
+class IMWindows
 {
-
+	
 };
