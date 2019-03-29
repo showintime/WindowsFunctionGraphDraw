@@ -115,14 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="imbox_cppverion.cpp" />
     <ClCompile Include="IMWinClass.cpp" />
     <ClCompile Include="IMWndProc.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Coordinate.h" />
-    <ClInclude Include="IMWin.h" />
     <ClInclude Include="IMWinClass.h" />
     <ClInclude Include="IMWndProc.h" />
     <ClInclude Include="Matrix.h" />

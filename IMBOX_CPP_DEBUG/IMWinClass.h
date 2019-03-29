@@ -1,19 +1,26 @@
 #pragma once
 #include "windows.h"
 
+LRESULT CALLBACK WndProc(HWND hWnd,
+	UINT msg,
+	WPARAM wParam,
+	LPARAM lParam);
+
+
 class IMWinClass
 {
 
 public:
-	IMWinClass();
+	
 	IMWinClass(HINSTANCE, HINSTANCE, LPWSTR, int);
 	IMWinClass(HINSTANCE, HINSTANCE, LPWSTR, int, WNDCLASSEX);
-	LRESULT CALLBACK IMWndProc(HWND, UINT, WPARAM, LPARAM);
+	
 	~IMWinClass();
-	bool IMRegister();
+	void IMRegister(HINSTANCE, HINSTANCE, LPWSTR, int, WNDCLASSEX);
 
+	void CreateWndWindow();
 
-
+	void ProcMsg();
 
 
 
@@ -23,5 +30,8 @@ private:
 	HINSTANCE hPrevInstance;
 	LPWSTR lpCmdLine;
 	int nCmdShow;
+
+	HWND hWnd;
+	
 
 };
