@@ -17,7 +17,7 @@ public:
 	
 
 
-	void printM();
+	
 	
 	Matrix operator=(Matrix);
 	Matrix operator+(Matrix);

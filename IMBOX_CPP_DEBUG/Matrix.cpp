@@ -1,5 +1,5 @@
 #include "Matrix.h"
-#include "iostream"
+
 Matrix::Matrix()
 {
 	matrix_rows = 0;
@@ -42,8 +42,8 @@ Matrix Matrix::operator=(Matrix B)
 
 	}
 	this->setelements(B.matrix_rows, B.matrix_columns, B.element);
-	Matrix *pM = new Matrix(B.matrix_rows, B.matrix_columns, B.element);
-	return *pM;
+	
+	return *this;
 }
 Matrix Matrix::operator+(Matrix B)
 {
@@ -109,8 +109,7 @@ Matrix Matrix::operator-=(Matrix B)
 
 	}
 
-	Matrix *pM = new Matrix(this->matrix_rows, this->matrix_columns, this->element);
-	return *pM;
+	return *this;
 }
 
 Matrix Matrix::operator+=(Matrix B)
@@ -130,8 +129,7 @@ Matrix Matrix::operator+=(Matrix B)
 
 	}
 
-	Matrix *pM = new Matrix(this->matrix_rows, this->matrix_columns, this->element);
-	return *pM;
+	return *this;
 }
 
 
@@ -157,19 +155,7 @@ void Matrix::setelements(int inrows, int incolumns, double* inelement)
 }
 
 
-void Matrix::printM()
-{
-	for (int i = 0; i < this->matrix_rows; i++)
-	{
-		for (int j = 0; j < this->matrix_columns; j++)
-		{
-			printf("%f\t", this->element[i*this->matrix_rows + j]);
-		}
-		printf("\n");
 
-	}
-
-}
 
 
 
