@@ -115,13 +115,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Coordinate_2D.cpp" />
+    <ClCompile Include="IMBOX.cpp" />
     <ClCompile Include="IMWinClass.cpp" />
     <ClCompile Include="IMWndProc.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Coordinate.h" />
+    <ClInclude Include="Coordinate_2D.h" />
     <ClInclude Include="IMWinClass.h" />
     <ClInclude Include="IMWndProc.h" />
     <ClInclude Include="Matrix.h" />

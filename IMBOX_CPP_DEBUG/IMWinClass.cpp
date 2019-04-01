@@ -65,7 +65,7 @@ void IMWinClass::CreateWndWindow()
 void IMWinClass::ProcMsg()
 {
 	MSG msg = { 0 };
-	while (GetMessage(&msg, 0, 0, 0) != WM_QUIT)
+	while (GetMessage(&msg, 0, 0, 0) != 0)
 	{
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);

@@ -27,11 +27,14 @@
     <ClCompile Include="WinMain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Coordinate_2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IMBOX.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Coordinate.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Matrix.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -39,6 +42,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="IMWndProc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate_2D.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

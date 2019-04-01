@@ -1,5 +1,17 @@
+
+
+/*
+
+
+WINDOWS STYLE
+
+*/
+
+
+
 #pragma once
 #include "windows.h"
+#include "Coordinate_2D.h"
 
 LRESULT CALLBACK WndProc(HWND hWnd,
 	UINT msg,

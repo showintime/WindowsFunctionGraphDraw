@@ -1,5 +1,23 @@
+
+/*
+
+WINDOWS MESSAGE SOLVING
+
+
+
+*/
+
+
+
 #pragma once
 #include "windows.h"
+#include "Coordinate_2D.h"
+
+
+LRESULT CALLBACK WndProc(HWND hWnd,
+	UINT msg,
+	WPARAM wParam,
+	LPARAM lParam);
 
 class IMWndProc
 {
