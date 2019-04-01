@@ -22,6 +22,12 @@ typedef struct tagIMPOINT
 class Coordinate
 {
 private:
+	HINSTANCE hInstance;
+	HINSTANCE hPrevInstance;
+	LPWSTR lpCmdLine;
+	int nCmdShow;
+
+
 	const wchar_t* CoordinateXLabel;
 	const wchar_t* CoordinateYLabel;
 

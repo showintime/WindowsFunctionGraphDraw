@@ -55,19 +55,29 @@ void IMWinClass::IMRegister(HINSTANCE hInstance,
 
 void IMWinClass::CreateWndWindow()
 {
-	this->hWnd = CreateWindow(L"IMWINDOW_DEFAULT",L"IM",0,100,100,800,600,0,0,this->hInstance,0);
+	this->hWnd = CreateWindow(L"IMWINDOW_DEFAULT",L"IM",WS_OVERLAPPEDWINDOW,100,100,800,600,0,0,this->hInstance,0);
 	MoveWindow(this->hWnd, 100, 100, 800, 600, true);
 	ShowWindow(this->hWnd, this->nCmdShow);
 	UpdateWindow(this->hWnd);
+
+	
 
 }
 
 void IMWinClass::ProcMsg()
 {
 	MSG msg = { 0 };
-	while (GetMessage(&msg, 0, 0, 0) != 0)
+	while (msg.message!=WM_QUIT)
 	{
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
+		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+		else
+		{
+			Sleep(10000);
+		}
+		
 	}
 }

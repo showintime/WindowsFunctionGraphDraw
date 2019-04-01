@@ -22,4 +22,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 	pIMWinClass->ProcMsg();
 
+
+
 }

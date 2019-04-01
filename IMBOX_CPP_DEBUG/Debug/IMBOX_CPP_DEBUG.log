@@ -1,4 +1,4 @@
 ﻿  Coordinate_2D.cpp
-c:\users\97420\source\repos\imbox_cpp_debug\imbox_cpp_debug\coordinate_2d.cpp(111): warning C4244: “=”: 从“double”转换到“LONG”，可能丢失数据
-c:\users\97420\source\repos\imbox_cpp_debug\imbox_cpp_debug\coordinate_2d.cpp(112): warning C4244: “=”: 从“double”转换到“LONG”，可能丢失数据
+c:\users\97420\source\repos\imbox_cpp_debug\imbox_cpp_debug\coordinate_2d.cpp(123): warning C4244: “=”: 从“double”转换到“LONG”，可能丢失数据
+c:\users\97420\source\repos\imbox_cpp_debug\imbox_cpp_debug\coordinate_2d.cpp(124): warning C4244: “=”: 从“double”转换到“LONG”，可能丢失数据
   IMBOX_CPP_DEBUG.vcxproj -> C:\Users\97420\source\repos\IMBOX_CPP_DEBUG\Debug\IMBOX_CPP_DEBUG.exe

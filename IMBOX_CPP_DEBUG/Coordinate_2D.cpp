@@ -2,6 +2,7 @@
 
 Coordinate::Coordinate()
 {
+
 }
 
 Coordinate::Coordinate(HWND hWnd)
@@ -23,19 +24,30 @@ Coordinate::~Coordinate()
 void Coordinate::DrawCoordinate()
 {
 
+	HDC temDc = CreateCompatibleDC(this->CoorfinateDc);
+	HDC bufDc = CreateCompatibleDC(this->CoorfinateDc);;
+	/*SetBkMode(temDc, TRANSPARENT);
+	SetBkColor(temDc, RGB(255, 0, 0));*/
+	HPEN impen = CreatePen(PS_SOLID, 1, RGB(77, 66, 1));
+	HBITMAP tembmp=CreateCompatibleBitmap(this->CoorfinateDc, 800, 600);
+	SelectObject(bufDc, tembmp);
+	BitBlt(temDc, 0, 0, 800, 600, bufDc, 0, 0, SRCCOPY);
 
-	SetBkMode(this->CoorfinateDc, TRANSPARENT);
-	HPEN impen = CreatePen(PS_SOLID, 5, RGB(77, 66, 1));
-	SelectObject(this->CoorfinateDc, impen);
 
+	SelectObject(bufDc, impen);
 
-	MoveToEx(this->CoorfinateDc, this->CoordinatePosition.left, this->CoordinatePosition.bottom, NULL);
-	LineTo(this->CoorfinateDc, this->CoordinatePosition.right, this->CoordinatePosition.bottom);
+	MoveToEx(bufDc, this->CoordinatePosition.left, this->CoordinatePosition.bottom, NULL);
+	LineTo(bufDc, this->CoordinatePosition.right, this->CoordinatePosition.bottom);
 
 
 
-	MoveToEx(this->CoorfinateDc, this->CoordinatePosition.left, this->CoordinatePosition.bottom, NULL);
-	LineTo(this->CoorfinateDc, this->CoordinatePosition.left, this->CoordinatePosition.top);
+	MoveToEx(bufDc, this->CoordinatePosition.left, this->CoordinatePosition.bottom, NULL);
+	LineTo(bufDc, this->CoordinatePosition.left, this->CoordinatePosition.top);
+
+
+
+	
+
 
 	RECT xRect = {
 		this->CoordinatePosition.right,
@@ -50,8 +62,8 @@ void Coordinate::DrawCoordinate()
 		this->CoordinatePosition.top,
 
 	};
-	DrawText(this->CoorfinateDc, this->CoordinateXLabel, sizeof(this->CoordinateXLabel), &xRect, DT_CENTER);
-	DrawText(this->CoorfinateDc, this->CoordinateYLabel, sizeof(this->CoordinateYLabel), &yRect, DT_CENTER);
+	DrawText(bufDc, this->CoordinateXLabel, sizeof(this->CoordinateXLabel), &xRect, DT_CENTER);
+	DrawText(bufDc, this->CoordinateYLabel, sizeof(this->CoordinateYLabel), &yRect, DT_CENTER);
 
 
 	IMPOINT imp[M];
@@ -114,19 +126,32 @@ void Coordinate::DrawCoordinate()
 	
 	}
 
+
+	SetPixel(bufDc, this->CoordinatePosition.left, this->CoordinatePosition.bottom, RGB(0xff,0xff,0xff));
+	//Rectangle(bufDc, this->CoordinatePosition.left, this->CoordinatePosition.top, this->CoordinatePosition.right, this->CoordinatePosition.bottom);
+	
+	
 	for (int i = 0; i < M; i++)
 	{
-		SetPixel(this->CoorfinateDc, simp[i].x, simp[i].y, RGB(rand() % 255, rand() % 255, rand() % 255));
+		//SetPixel(bufDc, simp[i].x, simp[i].y, RGB(rand() % 255, rand() % 255, rand() % 255));
+		SetPixel(bufDc, simp[i].x, simp[i].y, RGB(0x00,0xff,0x00));
 	}
 
 
 
 
+	//BitBlt(temDc, 0, 0, 800, 600, bufDc, 0, 0, SRCCOPY);
+	//BitBlt(temDc, 0, 0, 800, 600, bufDc, 0, 0, SRCAND);
+	//BitBlt(temDc, 0, 0, 800, 600, bufDc, 0, 0, SRCINVERT);
+	BitBlt(temDc, 0, 0, 800, 600, bufDc, 0, 0, SRCPAINT);
+
+	BitBlt(this->CoorfinateDc, 0, 0, 800, 600, temDc, 0, 0, SRCCOPY);
 
 
 
 
 
+	DeleteDC(temDc);
 
 	DeleteObject(impen);
 }
